@@ -1,0 +1,2 @@
+class LawmailerMailer < ApplicationMailer
+end
