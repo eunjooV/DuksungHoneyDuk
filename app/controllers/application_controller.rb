@@ -8,8 +8,8 @@ class ApplicationController < ActionController::Base
 	#회원가입 시 필요한 입력내용
 	def configure_permitted_parameters
 		added_attrs = [:email, :name, :nickname, :password, :password_confirmation, :remember_me,:comfirmed_at]
-		devise_parameter_sanitizer.permit(:sign_up, key: [:added_attrs])
-		devise_parameter_sanitizer.permit(:account_update, key: [:added_attrs])
+		devise_parameter_sanitizer.permit :sign_up, keys: added_attrs
+		devise_parameter_sanitizer.permit :account_update, keys: added_attrs
 	end
 
 end
